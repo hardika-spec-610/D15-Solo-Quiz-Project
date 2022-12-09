@@ -99,8 +99,28 @@ function longestArray(n1, n2) {
   }
 }
 longestArray(array1, array2);
-console.log(`30)`);
 
+console.log(`30)`);
+function highestSum(n1, n2) {
+  let arr1 = 0;
+  let arr2 = 0;
+  for (i = 0; i < n1.length; i++) {
+    arr1 += n1[i];
+  }
+  console.log(arr1);
+
+  for (i = 0; i < n2.length; i++) {
+    arr2 += n2[i];
+  }
+  if (arr1 > arr2) {
+    console.log("first bigger");
+  } else if (arr1 < arr2) {
+    console.log("second bigger");
+  } else {
+    console.log(" equal!");
+  }
+}
+highestSum(array1, array2);
 // DOM EXERCISES
 
 //         31) Get the element with an id of "container" from the page
@@ -115,12 +135,66 @@ console.log(`30)`);
 //         40) Write a function to empty a list
 
 console.log(`31)`);
-console.log(`31)`);
-console.log(`31)`);
-console.log(`31)`);
-console.log(`31)`);
-console.log(`31)`);
-console.log(`31)`);
-console.log(`31)`);
-console.log(`31)`);
-console.log(`31)`);
+console.log(document.getElementById("container"));
+
+console.log(`32)`);
+let text = document.getElementsByTagName("td");
+console.log(text);
+
+console.log(`33)`);
+for (i = 0; i < text.length; i++) {
+  console.log(text[i].innerText);
+}
+console.log(`34)`);
+function changeHeading(newTitle) {
+  let h1 = document.querySelector("h1");
+  h1.innerText = newTitle;
+}
+console.log(`35)`);
+function addExtraRowInTable() {
+  let newRow = document.createElement("tr");
+
+  for (let i = 0; i < 5; i++) {
+    let tdElement = document.createElement("td");
+    tdElement.innerText = i + `hi`;
+    newRow.appendChild(tdElement);
+  }
+  document.getElementById("table").appendChild(newRow);
+}
+addExtraRowInTable();
+
+console.log(`36)`);
+function addClass() {
+  let rowClass = document.getElementsByTagName("tr");
+  for (i = 0; i < rowClass.length; i++) {
+    rowClass[i].classList.add("test");
+  }
+}
+console.log(`37)`);
+function addBackgroundColor() {
+  let link = document.getElementsByTagName("a");
+  for (i = 0; i < link.length; i++) {
+    link[i].style.backgroundColor = "red";
+  }
+}
+addBackgroundColor();
+console.log(`38)`);
+window.onload = console.log("Page Loaded!");
+
+console.log(`39)`);
+function addNewItem() {
+  let ulElement = document.getElementsByTagName("ul")[0];
+  let createLiEle = document.createElement("li");
+  createLiEle.innerText = "HTML,CSS,JavaScript";
+  ulElement.appendChild(createLiEle);
+}
+addNewItem();
+
+console.log(`40)`);
+function emptyLi() {
+  let ulElement = document.getElementsByTagName("ul")[0];
+  let createLiEle = document.createElement("li");
+  createLiEle.innerText = "";
+  ulElement.appendChild(createLiEle);
+}
+emptyLi();
