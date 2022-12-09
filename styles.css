@@ -1,0 +1,48 @@
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: rgb(16, 19, 53);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.8);
+}
+#box {
+  border: 2px solid rgb(140, 60, 140);
+  padding: 15px 20px;
+  border-radius: 5px;
+}
+h1 {
+  text-align: center;
+  color: chocolate;
+}
+h2 {
+  margin: 0;
+  font-weight: 500;
+  font-size: 24px;
+}
+.options {
+  margin-top: 5px;
+}
+.row {
+  margin-top: 10px;
+}
+label {
+  cursor: pointer;
+}
+
+.btn {
+  width: 100%;
+  background-color: rgb(140, 60, 140);
+  color: white;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-top: 15px;
+  border-width: 0;
+  letter-spacing: 0.8px;
+  cursor: pointer;
+}
+.btn:hover {
+  background-color: rgba(140, 60, 140, 0.8);
+}
