@@ -8,6 +8,9 @@ body {
   align-items: center;
   color: rgba(255, 255, 255, 0.8);
 }
+.main {
+  width: 1000px;
+}
 #box {
   border: 2px solid rgb(140, 60, 140);
   padding: 15px 20px;
@@ -42,7 +45,11 @@ label {
   border-width: 0;
   letter-spacing: 0.8px;
   cursor: pointer;
+  font-size: 22px;
 }
 .btn:hover {
   background-color: rgba(140, 60, 140, 0.8);
+}
+.selected {
+  background-color: blueviolet;
 }

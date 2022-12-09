@@ -40,8 +40,9 @@
   <body>
     <div class="main">
       <h1>QUIZ TIME!</h1>
+      <div id="score"></div>
       <div id="box" class="ques-box">
-        <h2>1) the first dummy question</h2>
+        <h2 id="quesBox">1) the first dummy question</h2>
         <div class="row">
           <input
             class="options"
@@ -80,9 +81,11 @@
             value="d"
             name="option"
           />
-          <C for="option4">Option 4</label>
+          <label for="option4">Option 4</label>
         </div>
-        <button class="btn" type="button">Submit</button>
+        <button class="btn" type="button" onclick="nextQuestion()">
+          Submit
+        </button>
       </div>
     </div>
 

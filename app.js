@@ -93,20 +93,58 @@ const questions = [
     incorrect_answers: ["Python", "C", "Jakarta"],
   },
 ];
+let allOpetionsObject = [];
+for (let i = 0; i < questions.length; i++) {
+  allOpetionsObject.push(
+    { text: questions[i].correct_answer, correct: true },
+    { text: questions[i].incorrect_answers, correct: false }
+  );
+  console.log(allOpetionsObject);
+}
+function createOption() {
+  let allAnswers = document.getElementsByClassName("answer");
+  for (const answer of allAnswers) {
+    answer.classList.add("hide");
+  }
+}
+createOption();
 
-window.onload = function () {
-  // HINTS
-  // IF YOU ARE DISPLAYING ALL THE QUESTIONS AT ONCE:
-  // For each question, create a container for wrapping it; then create a radio button
-  // https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/radio
-  // with, as options, both the correct answer and the incorrect ones
-  // (you'll probably need to google how to get the value from a radio button in JS to evaluate the final score)
-  //
-  // IF YOU ARE DISPLAYING ONE QUESTION AT A TIME
-  // Display the first question with the text and the radio buttons
-  // when the user selects an answer, pick the next question from the array and replace the old one with it
-  // saving the user's choice in a variable
+const quesBox = document.getElementById("quesBox");
+const optionInput = document.querySelectorAll(".options");
+console.log("option", optionInput);
+console.log(quesBox);
+const loadQuestion = () => {
+  let index = 0;
+  const data = questions[index];
+  quesBox.innerText = `${index + 1}) ${data.question}`;
+  for (const option of questions[index].incorrect_answers) {
+    console.log("optionone", option);
+    // answerDiv.setAttribute('id', `answer${i + 1}`)
+
+    optionInput[0].nextElementSibling.innerText = data;
+  }
+
+  console.log("data", data);
 };
+
+// initial call
+loadQuestion();
+// function nextQuestion(){
+//     loadQuestion()
+// }
+// window.onload = loadQuestion
+
+// HINTS
+// IF YOU ARE DISPLAYING ALL THE QUESTIONS AT ONCE:
+// For each question, create a container for wrapping it; then create a radio button
+// https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/radio
+// with, as options, both the correct answer and the incorrect ones
+// (you'll probably need to google how to get the value from a radio button in JS to evaluate the final score)
+//
+// IF YOU ARE DISPLAYING ONE QUESTION AT A TIME
+// Display the first question with the text and the radio buttons
+// when the user selects an answer, pick the next question from the array and replace the old one with it
+// saving the user's choice in a variable
 
 // How to calculate the result? You can do it in 2 ways:
 // If you are presenting all the questions together, just take all the radio buttons and check if the selected answer === correct_answer
