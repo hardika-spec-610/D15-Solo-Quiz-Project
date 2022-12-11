@@ -58,13 +58,24 @@ console.log(randomNumber);
 console.log("length of array: ", randomNumber.length);
 
 console.log(`27)`);
-let maxNum;
-let minNum;
+
 function minMaxNumber(num) {
-  maxNum = Math.max(...num); //  maxNum = Math.max.apply(Math, num);
-  console.log("max number ", maxNum);
-  minNum = Math.min(...num); // minNum = Math.min.apply(Math, num);
-  console.log("min number ", minNum);
+  let maxNum = num[0];
+  let minNum = num[0];
+  //   maxNum = Math.max(...num); //  maxNum = Math.max.apply(Math, num);
+  //   console.log("max number ", maxNum);
+  //   minNum = Math.min(...num); // minNum = Math.min.apply(Math, num);
+  //   console.log("min number ", minNum);
+  for (let i = 1; i < num.length; i++) {
+    if (num[i] > maxNum) {
+      maxNum = num[i];
+    }
+    if (num[i] < minNum) {
+      minNum = num[i];
+    }
+  }
+  console.log("maxnum", maxNum);
+  console.log("min", minNum);
 }
 minMaxNumber(randomNumber);
 
